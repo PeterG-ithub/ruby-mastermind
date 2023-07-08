@@ -31,6 +31,14 @@ class String
     "\e[36m#{self}\e[0m"
   end
 
+  def orange
+    "\e[38;5;208m#{self}\e[0m"
+  end
+
+  def yellow
+    "\e[33m#{self}\e[0m"
+  end
+
   def gray
     "\e[37m#{self}\e[0m"
   end
@@ -85,5 +93,9 @@ class String
 
   def reverse_color
     "\e[7m#{self}\e[27m"
+  end
+
+  def first
+    self[0, 1]
   end
 end

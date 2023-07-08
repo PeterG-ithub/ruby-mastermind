@@ -1,7 +1,11 @@
-require_relative 'string.rb'
-require_relative 'messages.rb'
+# frozen_string_literal: true
 
+require_relative 'string'
+require_relative 'messages'
+require_relative 'board'
+# puts '○◉●◌⬤    ◯'
 intro
 rules
-sample_game
-puts '○◉●◌⬤'
+
+board = Board.new
+board.draw(0, %w[r o y p])
