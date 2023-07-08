@@ -8,6 +8,8 @@ class Board
   PURPLE = '⬤'.magenta
   GREEN = '⬤'.green
   BLUE = '⬤'.blue
+  BIGHINT = '●'.green
+  SMOLHINT = '●'.blue
 
   attr_accessor :input
 
@@ -49,6 +51,15 @@ class Board
       'p' => self.class::PURPLE, 'y' => self.class::YELLOW, 'o' => self.class::ORANGE
     }
     arr.each_with_index { |col, idx| @input[index][idx] = color[col] }
+    draw_board
+  end
+
+  # Based on number of big/smol hints
+  def draw_hint(index, big_hint, smol_hint)
+    num_of_hints = big_hint + smol_hint
+    num_of_hints.times { @input[index].pop }
+    big_hint.times { @input[index].push(self.class::BIGHINT) }
+    smol_hint.times { @input[index].push(self.class::SMOLHINT) }
     draw_board
   end
 end
