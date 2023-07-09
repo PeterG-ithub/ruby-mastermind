@@ -25,7 +25,7 @@ class Board
       input_layer(i)
       mid
     end
-    input_layer(row - 1)
+    input_layer(row)
     bot
   end
 

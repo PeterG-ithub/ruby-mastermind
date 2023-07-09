@@ -81,10 +81,20 @@ def input_detector(input, arr)
   input
 end
 
-def codebreaker
+def codebreaker_msg
+  system('clear')
   puts 'You chose codebreaker'
+  puts 'Example guess: r r y b or red red yellow Blue'
 end
 
-def codemaker
+def codemaker_msg
   puts 'You chose codemaker'
+end
+
+def winner
+  puts 'You win!'
+end
+
+def loser
+  puts 'You lose!'
 end
