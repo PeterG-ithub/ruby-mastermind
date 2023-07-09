@@ -48,11 +48,10 @@ class Game
   def codebreaker_start
     board = Board.new
     for i in 0..9
-      guess = input_valid(gets.chomp, %w[r o y g b p]).split(' ')
+      guess = input_valid(gets.chomp, %w[r o y g b p])
       big_hint, smol_hint = hint_giver(guess)
       board.draw(i, guess)
       board.draw_hint(i, big_hint, smol_hint)
-      draw_code
       board.draw_board
       break if big_hint == 4
 
@@ -62,16 +61,18 @@ class Game
       winner
     else
       loser
+      draw_code
     end
   end
 
   def input_valid(string, arr)
-    until string.split(' ').map { |val| arr.include?(val) }.all?
+    until string.split(' ').map { |val| arr.include?(val.first.downcase) }.all? && string.split(' ').count == 4
       puts 'Invalid input. Please try again: '
       puts 'Example guess: r r y b or red red yellow Blue'
+      print ": Please use 4 words/letters: \n" if string.split(' ').count != 4
       string = gets.chomp
     end
-    string
+    string.split(' ').map { |val| val.first.downcase }
   end
 
   def draw_code
