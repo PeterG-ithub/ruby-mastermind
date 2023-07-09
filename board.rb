@@ -13,17 +13,19 @@ class Board
 
   attr_accessor :input
 
-  def initialize
-    @input = Array.new(10) { Array.new(8, '○') }
+  def initialize(row = 10)
+    @row = row
+    @input = Array.new(row) { Array.new(8, '○') }
   end
 
-  def draw_board
+  def draw_board(row = @row)
     top
-    9.times do |i|
+    row -= 1
+    row.times do |i|
       input_layer(i)
       mid
     end
-    input_layer(9)
+    input_layer(row - 1)
     bot
   end
 
@@ -51,15 +53,13 @@ class Board
       'p' => self.class::PURPLE, 'y' => self.class::YELLOW, 'o' => self.class::ORANGE
     }
     arr.each_with_index { |col, idx| @input[index][idx] = color[col] }
-    draw_board
   end
 
   # Based on number of big/smol hints
-  def draw_hint(index, big_hint, smol_hint)
+  def draw_hint(index, big_hint = 0, smol_hint = 0)
     num_of_hints = big_hint + smol_hint
     num_of_hints.times { @input[index].pop }
     big_hint.times { @input[index].push(self.class::BIGHINT) }
     smol_hint.times { @input[index].push(self.class::SMOLHINT) }
-    draw_board
   end
 end

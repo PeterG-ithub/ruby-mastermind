@@ -22,5 +22,12 @@ class Game
   def start_game
     intro
     rules
+    example
+    game_selection(selection)
+  end
+
+  def game_selection(sel)
+    codebreaker if sel == '1'
+    codemaker if sel == '2'
   end
 end
