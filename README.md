@@ -8,8 +8,6 @@ Mastermind is a classic board game where one player creates a secret code using 
 The code breaker receives feedback after each guess to help them narrow down the possibilities. The game involves logical thinking and deduction to crack the hidden code. It is
 similar to wordle. In my implementation, I use the colors Red, Orange, Yellow, Green, Blue, Purple.
 ## How to play
-- [Play here]()
-
 - To play Mastermind, one player creates a secret code using colored pegs, while the other player tries to guess the code. 
 The code maker places a sequence of colored pegs in a specific order on the board, hiding it from the code breaker.
 
@@ -28,6 +26,7 @@ be played solo, where the player tries to solve a code created by the game itsel
 
 - In my implementation, the other player will be the computer while you get to choose if you want to be the code maker or the code breaker
 
+- [Play here](https://replit.com/@Petahs/ruby-mastermind)
 ## Quick tutorial
 For further explanation, You can watch this short youtube tutorial by [Gather Together Games](https://www.youtube.com/@GatherTogetherGames)\
 [![How to Play Mastermind thumbnail](https://i.ytimg.com/vi/Dn0iqlY5tMU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-xlUdXpb5Q4vLn2XtQ_nGh2VPUA)](https://youtu.be/Dn0iqlY5tMU)\
