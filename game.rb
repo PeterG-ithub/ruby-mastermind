@@ -12,15 +12,17 @@ class Game
   def hint_giver(guess, code = @code)
     big_hint = 0
     small_hint = 0
-    temp = guess.map(&:clone)
-    code.each_with_index do |val, idx|
-      if val == temp[idx]
-        big_hint += 1
-        index = temp.find_index { |i| i == val }
-        temp[index] = '0'
-      elsif temp.include?(val)
-        index = temp.find_index { |i| i == val }
-        temp[index] = '0'
+    clone_guess = guess.clone
+    clone_code = code.clone
+    clone_guess.reject!.with_index do |val, idx|
+      big_hint += 1 if val == code[idx]
+      val == code[idx]
+    end
+    clone_code.reject!.with_index { |val, idx| val == guess[idx] }
+    clone_guess.each_with_index do |val, idx|
+      if clone_code.include?(val)
+        clone_code.slice!(clone_code.index(val))
+        clone_guess[idx] = nil
         small_hint += 1
       end
     end
@@ -57,7 +59,7 @@ class Game
     temp = []
     board = Board.new
     10.times do |i|
-      #system('clear')
+      # system('clear')
       big_hint, smol_hint = hint_giver(guess)
       draw_code
       board.draw(i, guess)
@@ -65,12 +67,12 @@ class Game
       board.draw_board
       set.each { |val| temp.push(val) if hint_giver(val, guess) == [big_hint, smol_hint] }
       set = temp
-      p set
+      # p set
       temp = []
       guess = set[0]
       break if big_hint == 4
 
-      thinking_animation(3)
+      # thinking_animation(3)
     end
     algo_winner
   end
