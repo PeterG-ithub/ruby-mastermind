@@ -9,7 +9,7 @@ class Board
   GREEN = '⬤'.green
   BLUE = '⬤'.blue
   BIGHINT = '●'.green
-  SMOLHINT = '●'.blue
+  SMOLHINT = '●'
 
   attr_accessor :input
 

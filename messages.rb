@@ -19,11 +19,11 @@ def rules
   puts "The #{'CODEBREAKER\'s'.red.bold} objective is to #{'guess'.bold} the secret code"\
     ' within 10 attempts.'
   puts 'After each guess, the code maker provides feedback to the code breaker.'\
-    ' The feedback consists of green and blue small circle.'
+    ' The feedback consists of green and white small circle.'
   puts "  #{'Green'.green.bold} circle #{'●'.green} : Indicates the number of"\
     " circle that are the #{'correct'.green.bold} color"\
     " and in the #{'correct'.green.bold} position."
-  puts "  #{'Blue'.blue.bold}  circle #{'●'.blue} : Indicates the number of"\
+  puts "  #{'White'.bold} circle ● : Indicates the number of"\
     " circle that are the #{'correct'.green.bold} color"\
     " but in the #{'wrong'.red.bold} position."
   puts 'The code maker does not reveal which specific pegs in the guess'\
