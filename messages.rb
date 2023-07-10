@@ -88,11 +88,17 @@ def codebreaker_msg
 end
 
 def codemaker_msg
-  puts 'You chose codemaker'
+  system('clear')
+  puts 'You chose codemaker. Please input four colors you want as the code'
+  puts 'Example input: r r y b or red red yellow Blue'
 end
 
 def winner
   puts 'You win!'
+end
+
+def algo_winner
+  puts 'I win!!!!!'
 end
 
 def loser
