@@ -20,11 +20,11 @@ class Game
     end
     clone_code.reject!.with_index { |val, idx| val == guess[idx] }
     clone_guess.each_with_index do |val, idx|
-      if clone_code.include?(val)
-        clone_code.slice!(clone_code.index(val))
-        clone_guess[idx] = nil
-        small_hint += 1
-      end
+      next unless clone_code.include?(val)
+
+      clone_code.slice!(clone_code.index(val))
+      clone_guess[idx] = nil
+      small_hint += 1
     end
     [big_hint, small_hint]
   end
@@ -59,7 +59,7 @@ class Game
     temp = []
     board = Board.new
     10.times do |i|
-      # system('clear')
+      system('clear')
       big_hint, smol_hint = hint_giver(guess)
       draw_code
       board.draw(i, guess)
@@ -67,12 +67,11 @@ class Game
       board.draw_board
       set.each { |val| temp.push(val) if hint_giver(val, guess) == [big_hint, smol_hint] }
       set = temp
-      # p set
       temp = []
       guess = set[0]
       break if big_hint == 4
 
-      # thinking_animation(3)
+      thinking_animation(2)
     end
     algo_winner
   end
@@ -110,6 +109,7 @@ class Game
   def input_valid(string, arr)
     until string.split(' ').map { |val| arr.include?(val.first.downcase) }.all? && string.split(' ').count == 4
       puts 'Invalid input. Please try again: '
+      puts 'Colors: red orange yellow green blue purple'
       puts 'Example input: r r y b or red red yellow Blue'
       print ": Please use 4 words/letters: \n" if string.split(' ').count != 4
       string = gets.chomp

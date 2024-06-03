@@ -84,12 +84,14 @@ end
 def codebreaker_msg
   system('clear')
   puts 'You chose codebreaker'
+  puts 'Colors: red orange yellow green blue purple'
   puts 'Example guess: r r y b or red red yellow Blue'
 end
 
 def codemaker_msg
   system('clear')
   puts 'You chose codemaker. Please input four colors you want as the code'
+  puts 'Colors: red orange yellow green blue purple'
   puts 'Example input: r r y b or red red yellow Blue'
 end
 
