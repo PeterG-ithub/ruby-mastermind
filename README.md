@@ -7,6 +7,43 @@ A command-line Mastermind game written in Ruby. This project is part of [The Odi
 Mastermind is a classic board game where one player creates a secret code using colored pegs, and the other player tries to guess the code within a limited number of attempts. 
 The code breaker receives feedback after each guess to help them narrow down the possibilities. The game involves logical thinking and deduction to crack the hidden code. It is
 similar to wordle. In my implementation, I use the colors Red, Orange, Yellow, Green, Blue, Purple.
+
+## Installation
+
+### Windows
+
+1. Ensure you have Ruby installed. If not, download and install it from [here](https://www.ruby-lang.org/en/downloads/).
+2. Clone this repository to your local machine.
+    ```bash
+        git clone git@github.com:PeterG-ithub/ruby-mastermind.git
+3. Navigate to the directory where you cloned the repository.
+    ```bash
+        cd ruby-mastermind
+4. Run `main.rb` to start the game.
+    ```bash
+        ruby main.rb
+
+### Linux
+
+1. Open a terminal.
+2. Ensure you have Ruby installed by running `ruby --version`. 
+    ```bash
+        ruby --version
+If not, install Ruby using your package manager.
+    ```bash
+        sudo apt update
+        sudo apt-get install ruby-full
+
+3. Clone this repository to your local machine.
+    ```bash
+        git clone git@github.com:PeterG-ithub/ruby-mastermind.git
+4. Navigate to the directory where you cloned the repository.
+    ```bash
+        cd ruby-mastermind
+5. Run `main.rb` to start the game.
+    ```bash
+        ruby main.rb
+
 ## How to play
 - To play Mastermind, one player creates a secret code using colored pegs, while the other player tries to guess the code. 
 The code maker places a sequence of colored pegs in a specific order on the board, hiding it from the code breaker.
@@ -49,3 +86,8 @@ This Ruby Project is part of the curriculum provided by [The Odin Project](https
 - Mastermind Project: [Mastermind](https://www.theodinproject.com/lessons/ruby-mastermind)
 - Mastermind tutorial: [How To Play Mastermind](https://youtu.be/Dn0iqlY5tMU)
 - Swaszek algorithm info: [Wolfram](https://mathworld.wolfram.com/Mastermind.html)
+
+## Screenshot demo
+
+![Demo0](images/demo0.png)
+![Demo](images/demo.png)
